@@ -50,7 +50,20 @@ $hotels = [
 </head>
 
 <body>
+    <h1>Hotels</h1>
+    <?php
 
+    foreach ($hotels as $index => $hotel) {
+        $index += 1;
+        echo "<p>Hotel $index</p>";
+        foreach ($hotel as $hotel_key => $hotel_info) {
+            echo $hotel_key . ': ' . $hotel_info;
+            echo '<br>';
+        }
+        echo '<hr>';
+    }
+
+    ?>
 </body>
 
 </html>
