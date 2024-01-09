@@ -53,37 +53,39 @@ $hotels = [
 
 <body>
     <h1 class="text-center py-5">Hotels</h1>
-    <?php
+    <div class="table-container d-flex flex-column align-items-center">
+        <?php
 
-    foreach ($hotels as $index => $hotel) {
-        $index += 1;
-        // crea una tabella per ogni hotel 
-        echo '<table class="table table-info mb-5">
+        foreach ($hotels as $index => $hotel) {
+            $index += 1;
+            // crea una tabella per ogni hotel 
+            echo '<table class="table table-info mb-5 w-50 ">
         <thead>
           <tr>
           <th scope="col" colspan= 2 class= "text-center text-uppercase py-3"> Hotel ' . $index . '</th> 
           </tr>
         </thead>
         <tbody>';
-        foreach ($hotel as $hotel_key => $hotel_info) {
-            // verifica se sta ciclando sul parcheggio 
-            if ($hotel_key === 'parking') {
-                // crea una variabile da stampare al posto del valore del parcheggio 
-                $presenza_parcheggio = $hotel_info ? 'Yes' : 'No';
-                echo '<tr>
+            foreach ($hotel as $hotel_key => $hotel_info) {
+                // verifica se sta ciclando sul parcheggio 
+                if ($hotel_key === 'parking') {
+                    // crea una variabile da stampare al posto del valore del parcheggio 
+                    $presenza_parcheggio = $hotel_info ? 'Yes' : 'No';
+                    echo '<tr>
                 <th scope="row">' . $hotel_key . '</th>
                 <td>' . $presenza_parcheggio . '</td>
               </tr>';
-            } else { // stampa la chiave con il suo valore
-                echo '<tr>
+                } else { // stampa la chiave con il suo valore
+                    echo '<tr>
                 <th scope="row">' . $hotel_key . '</th>
                 <td>' . $hotel_info . '</td>
               </tr>';
+                }
             }
         }
-    }
 
-    ?>
+        ?>
+    </div>
 
 </body>
 
