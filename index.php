@@ -77,7 +77,7 @@ $hotels = [
               </tr>';
                 } else { // stampa la chiave con il suo valore
                     echo '<tr>
-                <th scope="row">' . $hotel_key . '</th>
+                <th scope="row" class="w-50">' . $hotel_key . '</th>
                 <td>' . $hotel_info . '</td>
               </tr>';
                 }
